@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="120" y1="0" x2="760" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9CBB8"/><stop offset=".48" stop-color="#C2B9A8"/><stop offset="1" stop-color="#788B83"/>
+    </linearGradient>
+    <linearGradient id="water" x1="470" y1="590" x2="460" y2="1160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#718B84"/><stop offset=".48" stop-color="#496D68"/><stop offset="1" stop-color="#314E4A"/>
+    </linearGradient>
+    <linearGradient id="rock" x1="80" y1="440" x2="590" y2="970" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#958F7B"/><stop offset="1" stop-color="#555F54"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientTransform="matrix(0 235 -245 0 611 256)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1D6A9" stop-opacity=".85"/><stop offset="1" stop-color="#E9C99D" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="25"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <clipPath id="frame"><rect width="900" height="1200"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="900" height="1200" fill="url(#sky)"/>
+    <circle cx="610" cy="253" r="247" fill="url(#sun)"/>
+    <g opacity=".7" filter="url(#soft)">
+      <path d="M-112 549 168 226l190 229 143-190 294 311-20 247H-80l-32-274Z" fill="#828778"/>
+      <path d="m337 460 197-323 231 328 130-116 78 271-642 106-151-266 157 0Z" fill="#56695E"/>
+      <path d="m-84 555 205-184 144 202 171-167 150 196-541 200-129-247Z" fill="#9B8E75"/>
+    </g>
+    <path d="M0 577c132-36 247-26 386 12 141 39 333 39 514-12v623H0V577Z" fill="url(#water)"/>
+    <path d="M0 596c164-26 273-10 402 15 158 31 302 29 498-13" stroke="#D6C6A7" stroke-opacity=".56" stroke-width="4"/>
+    <path d="M0 663c176-22 274-7 397 11 158 22 311 15 503-8M0 747c140-12 251 4 397 10 154 7 317 0 503-12M0 858c161-7 291 4 424 5 147 1 286-3 476-9" stroke="#BED0C3" stroke-opacity=".32" stroke-width="3"/>
+    <path d="M-52 446c105-124 196-202 278-211 60-7 113 37 170 128-88-28-145-11-192 42-71 81-100 225-191 299L-52 446Z" fill="url(#rock)"/>
+    <path d="M-36 501c106-96 183-155 244-157 64-2 105 53 153 126-75-18-123-2-167 44-67 71-104 181-205 242l-25-255Z" fill="#777B69" fill-opacity=".72"/>
+    <path d="M597 452c69-141 149-209 217-198 55 9 94 64 132 157v251c-57-52-102-67-147-46-76 35-125 133-236 166 48-122 71-220 34-330Z" fill="#505D52"/>
+    <path d="M630 486c62-92 112-132 156-123 47 10 84 70 115 147-48-23-85-23-119 0-51 35-85 100-160 131 26-61 34-111 8-155Z" fill="#78806C"/>
+    <path d="M61 902c112-35 206-22 298 15 111 45 226 53 355 24 72-16 132-38 186-63v322H0V924l61-22Z" fill="#304B46" fill-opacity=".68"/>
+    <path d="M108 1061c127-41 249-26 359 4 118 32 236 34 358-6" stroke="#A3B5A7" stroke-opacity=".32" stroke-width="5"/>
+    <path d="M287 633c85 17 194 19 293 3m-328 91c104 14 216 15 340-1m-252 99c80 8 174 7 264-3" stroke="#E4D5B6" stroke-opacity=".58" stroke-width="5" stroke-linecap="round"/>
+    <rect width="900" height="1200" fill="url(#sun)"/>
+    <rect width="900" height="1200" filter="url(#grain)" opacity=".55"/>
+  </g>
+</svg>

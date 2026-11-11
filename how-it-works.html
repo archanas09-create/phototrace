@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2eee7">
+    <meta name="description" content="A simple guide to reading photo metadata and creating a cleaner copy with PhotoTrace.">
+    <title>How it works — phototrace.</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+  </head>
+  <body data-page="how">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="phototrace home"><img class="brand-mark" src="assets/phototrace-mark.svg" alt="">phototrace<span>.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" data-nav="how" href="how-it-works.html">How it works</a>
+        <a class="nav-link" data-nav="privacy" href="privacy.html">Privacy</a>
+        <a class="nav-link" data-nav="about" href="about.html">About</a>
+      </nav>
+    </header>
+    <main id="main" class="journal-page story-page how-page">
+      <header class="story-heading">
+        <p class="eyebrow">A FIELD GUIDE <span class="step-divider">/</span> THREE QUIET STEPS</p>
+        <h1>A closer look,<br><em>on your terms.</em></h1>
+        <p>PhotoTrace helps you understand the extra details a photo may carry — then lets you decide what to do with them.</p>
+      </header>
+
+      <section class="story-steps" aria-label="How PhotoTrace works">
+        <article class="story-step">
+          <span class="story-step-number">01</span>
+          <div><p class="eyebrow">BEGIN WITH A PICTURE</p><h2>Choose</h2><p>Select a JPEG, PNG or WebP from your device. PhotoTrace checks that it can read the file and shows you a preview before anything else.</p></div>
+          <span class="story-step-mark" aria-hidden="true">↗</span>
+        </article>
+        <article class="story-step">
+          <span class="story-step-number">02</span>
+          <div><p class="eyebrow">READ WHAT'S THERE</p><h2>Discover</h2><p>Look for camera, capture date, image dimensions and GPS coordinates. EXIF details come from the original file; file size and resolution are identified separately.</p></div>
+          <span class="story-step-mark" aria-hidden="true">⌕</span>
+        </article>
+        <article class="story-step">
+          <span class="story-step-number">03</span>
+          <div><p class="eyebrow">KEEP THE MOMENT</p><h2>Choose</h2><p>Keep the original, or create a separate Canvas-encoded copy without the source EXIF metadata. The new image can look slightly different after re-encoding.</p></div>
+          <span class="story-step-mark" aria-hidden="true">✳</span>
+        </article>
+      </section>
+
+      <aside class="story-note"><span>PLEASE NOTE</span><p>A missing GPS tag is not proof that a photo is completely private. The scene itself — faces, signs, landmarks and context — may also reveal information.</p></aside>
+      <a class="story-cta" href="analyze.html"><span>Ready when you are.</span><b>Choose a photo <span aria-hidden="true">→</span></b></a>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><img class="brand-mark" src="assets/phototrace-mark.svg" alt="">phototrace<span>.</span></a><p>A small tool for more thoughtful sharing.</p><a href="privacy.html">A note on privacy ↗</a></footer>
+  </body>
+</html>

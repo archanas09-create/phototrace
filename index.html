@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2eee7">
+    <meta name="description" content="Discover what your photos contain, privately on your device.">
+    <title>phototrace. — Every picture has a secret</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/exifreader@4.30.0/dist/exif-reader.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="phototrace home"><img class="brand-mark" src="assets/phototrace-mark.svg" alt="">phototrace<span>.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" data-nav="how" href="how-it-works.html">How it works</a>
+        <a class="nav-link" data-nav="privacy" href="privacy.html">Privacy</a>
+        <a class="nav-link" data-nav="about" href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="workflow-view" data-workflow-view="home">
+      <section class="journal-hero" aria-labelledby="home-title">
+        <div class="hero-copy">
+          <p class="issue-label"><span>AN OPENING NOTE</span><span>VOL. 01 — PHOTO / PRIVACY</span></p>
+          <h1 id="home-title">Every picture<br>has a <em>secret.</em></h1>
+          <p class="hero-subtitle">Let's find out what yours is hiding.</p>
+          <p class="hero-description">A photograph holds more than its moment. Take a closer look at the details that might travel with it.</p>
+          <a class="hero-text-link" href="#home-upload" data-go="home">Start with your own photo <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="hero-composition">
+          <div class="hero-image-column">
+            <figure class="hero-photo-stage" id="home-photo-stage">
+              <img id="home-sample" class="home-sample" src="assets/photo-study.svg" alt="An original landscape study of a quiet mountain lake in late afternoon light">
+              <div class="selected-photo" id="selected-photo" hidden>
+                <img id="preview-image" alt="Preview of your selected photo">
+                <div class="selected-caption">
+                  <div class="selected-info"><b id="file-name"></b><span id="file-details"></span></div>
+                  <div class="selection-actions">
+                    <button class="text-button" id="replace-selection" type="button">Replace</button>
+                    <button class="text-button" id="clear-selection" type="button">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="photo-caption"><span>STUDY 01</span><span>Still water, late light</span><span>PHOTO TRACE / 2026</span></figcaption>
+            </figure>
+            <span class="image-side-note" aria-hidden="true">A MOMENT, BEFORE IT MOVES ON</span>
+          </div>
+
+          <aside class="upload-note" id="home-upload" aria-label="Choose a photo to analyze">
+            <p class="upload-index">01 <span>— YOUR IMAGE</span></p>
+            <h2>Bring a picture<br>into the light.</h2>
+            <p class="upload-instruction">JPG, PNG or WebP. Choose a file or drop it anywhere here.</p>
+            <label class="choose-photo" id="dropzone" for="file-input" tabindex="0">
+              <input id="file-input" class="visually-hidden" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
+              <span>Choose a photo</span><span aria-hidden="true">↗</span>
+            </label>
+            <p class="drop-hint">You can also drag and drop</p>
+            <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+            <button type="button" id="analyze-button" class="button button-primary explore-button" disabled><span class="button-label">Explore my photo</span><span aria-hidden="true">→</span></button>
+            <p class="private-note"><span aria-hidden="true">✳</span> Your photo stays on this device. Always.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="chapter-intro" id="how-it-works">
+        <p class="chapter-number">01 —</p>
+        <div class="chapter-copy">
+          <h2>Discover what's inside your image.</h2>
+          <p>Camera, date, place. Some pictures carry quiet details in their file. PhotoTrace helps you see what is there, then make a fresh copy without it.</p>
+        </div>
+        <a class="chapter-link" href="how-it-works.html">How it works <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="journal-notes" aria-label="A few things to know">
+        <article><span>01 / LOOK</span><h3>Read the original</h3><p>See camera, capture and location details only when they are actually present.</p></article>
+        <article><span>02 / NOTICE</span><h3>Understand what travels</h3><p>Get a clear privacy note. No GPS does not mean a photo tells no story.</p></article>
+        <article><span>03 / CHOOSE</span><h3>Keep a clean copy</h3><p>Re-encode a separate image on this device. Your original stays untouched.</p></article>
+      </section>
+      </div>
+
+      <section class="workflow-view journal-page analysis-page" data-workflow-view="analysis" hidden>
+        <div class="page-heading editorial-heading">
+          <button class="back-link back-button" type="button" data-go="home">← Choose another photo</button>
+          <p class="eyebrow">A CLOSER LOOK <span class="step-divider">/</span> THE DETAILS</p>
+          <h1>Inside the image.</h1>
+          <p class="page-intro">The picture is yours. Here's what else may be inside it.</p>
+        </div>
+        <nav class="tool-subnav" aria-label="Photo tools"><a class="is-current" href="#analysis" data-go="analysis" aria-current="page">Analysis</a><a href="#privacy" data-go="privacy">Privacy notes</a><a href="#clean" data-go="clean">A clean copy</a></nav>
+        <section class="analysis-layout" aria-label="Photo and extracted details">
+          <figure class="analysis-image-card"><div class="analysis-image-wrap">
+            <img id="analysis-preview" alt="Selected photo preview" hidden>
+            <div class="analysis-empty" id="analysis-empty"><span aria-hidden="true">⌁</span><b>Your photograph will appear here</b><button class="inline-link" type="button" data-go="home">Choose a photo</button></div>
+            <span class="image-note image-note-gps" id="image-gps-label" hidden>⌖ GPS found</span>
+            <span class="image-note image-note-camera" id="image-camera-label" hidden>Camera detected</span>
+            <span class="analysis-image-badge">THE ORIGINAL</span>
+          </div><figcaption><span><b id="analysis-file-name">No photo selected</b><small>Held in this page only</small></span><button class="text-button" type="button" data-clear-photo hidden>Remove photo</button></figcaption></figure>
+          <aside class="analysis-data">
+            <div class="analysis-data-heading"><span class="eyebrow">READ FROM YOUR FILE</span><span class="source-badge">Original image</span></div>
+            <div class="loading-indicator" id="analysis-loading" hidden role="status" aria-live="polite"><span class="loading-spinner"></span> Reading image details locally…</div>
+            <section class="metadata-chapter"><h2>Camera</h2><dl><div><dt>Manufacturer</dt><dd id="camera-make">Not available</dd></div><div><dt>Model</dt><dd id="camera-model">Not available</dd></div><div><dt>Lens</dt><dd id="camera-lens">Not available</dd></div></dl></section>
+            <section class="metadata-chapter"><h2>Captured</h2><dl><div><dt>Date</dt><dd id="capture-date">Not available</dd></div><div><dt>Time</dt><dd id="capture-time">Not available</dd></div><div><dt>Dimensions</dt><dd id="capture-dimensions">Not available</dd></div></dl></section>
+            <section class="metadata-chapter"><h2>Location</h2><dl><div><dt>Coordinates</dt><dd id="gps-coordinates">Not available</dd></div></dl><a id="gps-map-link" class="map-link" hidden target="_blank" rel="noopener noreferrer">Open location on map ↗</a></section>
+            <section class="metadata-chapter"><h2>Image details</h2><dl><div><dt>Format</dt><dd id="image-format">Not available</dd></div><div><dt>File size</dt><dd id="image-size">Not available</dd></div><div><dt>Resolution</dt><dd id="image-resolution">Not available</dd></div></dl></section>
+          </aside>
+        </section>
+        <p class="notice notice-info" id="metadata-notice" role="status" aria-live="polite">EXIF values are read from the original image. Dimensions, format, and size come from the file.</p>
+        <aside class="observation-strip"><span>AN OBSERVATION</span><p id="privacy-observation">Your photo's story doesn't stop at the edge of the frame.</p><button class="inline-link" type="button" data-go="privacy">Read the privacy notes ↗</button></aside>
+        <details class="all-metadata"><summary>Open the full metadata list</summary><dl class="metadata-grid" id="metadata-list"><div class="empty-state">Choose a photo to see its details.</div></dl></details>
+        <section class="clean-invitation"><div><p class="eyebrow">BEFORE YOU SHARE IT</p><h2>Make it yours.</h2><p>Create a separate copy without the embedded details. The original stays as it is.</p></div><button class="button button-primary" type="button" data-go="clean">Create clean copy <span aria-hidden="true">→</span></button></section>
+      </section>
+
+      <section class="workflow-view journal-page privacy-page" data-workflow-view="privacy" hidden>
+        <div class="page-heading editorial-heading"><button class="back-link back-button" type="button" data-go="analysis">← Photo details</button><p class="eyebrow">A CLOSER LOOK <span class="step-divider">/</span> YOUR PRIVACY</p><h1>What could your photo share?</h1><p class="page-intro">A practical check of details that might travel when you share the original image.</p></div>
+        <div class="loading-indicator" id="privacy-loading" hidden role="status" aria-live="polite"><span class="loading-spinner"></span> Checking embedded metadata locally…</div>
+        <section class="privacy-overview"><div class="privacy-overview-top"><span class="privacy-large-icon">◈</span><div><span class="eyebrow">METADATA SCAN</span><h2 id="privacy-summary-title">Choose a photo first</h2><p id="privacy-summary-copy">Your privacy check will appear here.</p></div></div><div class="privacy-findings" id="privacy-status-list"><div class="empty-state">Choose a photo to see its privacy notes.</div></div></section>
+        <section class="sensitive-section"><div class="detail-heading"><div><span class="eyebrow">PRESENT IN THE FILE</span><h2>Other details worth a look</h2></div><span class="source-badge">Original file</span></div><p class="section-copy">Creator names, editing software, and extra GPS data can sometimes accompany an image. Only values found in your photo will appear.</p><div class="sensitive-tags" id="sensitive-tags"><span class="sensitive-empty">Choose a photo to check for these details.</span></div></section>
+        <aside class="privacy-caution"><span class="caution-icon">!</span><p><b>No GPS doesn't mean no risk.</b> The visible content, faces, signs, landmarks, and context around your image can still reveal information. This check covers metadata only.</p></aside>
+        <section class="privacy-actions"><div><span class="eyebrow">READY TO SHARE?</span><h2>You can keep the moment, not the metadata.</h2><p>Make a new, re-encoded copy without the original embedded details.</p></div><button class="button button-primary" type="button" data-go="clean">Go to clean copy <span aria-hidden="true">→</span></button></section>
+      </section>
+
+      <section class="workflow-view journal-page clean-page" data-workflow-view="clean" hidden>
+        <div class="page-heading editorial-heading"><button class="back-link back-button" type="button" data-go="analysis">← Photo details</button><p class="eyebrow">THE LAST LOOK <span class="step-divider">/</span> A FRESH COPY</p><h1>Before you share it,<br><em>make it yours.</em></h1><p class="page-intro">Create a new image without the original embedded details. Your original stays exactly as it is.</p></div>
+        <section class="clean-action"><div><p class="eyebrow">MADE HERE, ON YOUR DEVICE</p><h2>Same photograph.<br>A little less attached.</h2><p>The image is re-encoded in your browser. Format and visual quality may change slightly; the original is never overwritten.</p></div><button id="clean-button" type="button" class="button button-primary" disabled><span class="button-label">Create clean copy</span><span aria-hidden="true">→</span></button></section>
+        <p class="clean-result" id="clean-result" role="status" aria-live="polite"></p>
+        <section class="comparison-large" id="comparison" hidden aria-label="Original and cleaned photo comparison">
+          <div class="comparison-heading"><span>THE ORIGINAL</span><span>THE NEW COPY</span></div>
+          <figure class="comparison-frame"><div class="comparison-image-wrap"><img id="before-image" alt="Original photo containing its original metadata"><span class="image-label">ORIGINAL</span><span class="comparison-empty">Choose a photo first</span></div><figcaption><b>Original photograph</b><span id="before-caption">The source stays unchanged</span></figcaption></figure>
+          <div class="comparison-middle"><span class="comparison-arrow-large" aria-hidden="true">→</span><span>RE-ENCODED</span></div>
+          <figure class="comparison-frame"><div class="comparison-image-wrap clean-image-wrap"><img id="after-image" alt="Clean re-encoded photo without original metadata" hidden><span class="image-label">CLEAN COPY</span><span class="comparison-empty">Your new copy will appear here</span></div><figcaption><b>A fresh image</b><span id="after-caption">A new file made on this device</span></figcaption></figure>
+          <div class="download-row"><p>Details have been left behind. The picture remains yours.</p><button id="download-button" type="button" class="button button-secondary" disabled hidden>↓ <span>Download copy</span></button></div>
+        </section>
+        <p class="clean-assurance"><span aria-hidden="true">✳</span> This creates a separate file. Nothing is sent anywhere.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="index.html"><img class="brand-mark" src="assets/phototrace-mark.svg" alt="">phototrace<span>.</span></a>
+      <p>A small tool for more thoughtful sharing.</p>
+      <a href="about.html">About PhotoTrace ↗</a>
+    </footer>
+  </body>
+</html>
